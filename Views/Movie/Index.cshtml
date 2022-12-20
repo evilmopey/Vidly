@@ -1,0 +1,35 @@
+﻿@model Vidly.ViewModels.MovieViewModel
+<h2>Movies</h2>
+
+<a method="post" asp-controller="Movie" asp-action="new" class="btn btn-primary">Add Movie</a>
+@if(Model.Movies.Count == 0)
+{
+    <h2>
+        Sorry no movies to display
+    </h2>
+}
+else
+{
+
+    <table>
+        <thead>
+            <tr>
+                <th>Title:</th>
+                <th>Genre:</th>
+        </tr>
+        </thead>
+        <tbody>
+            @foreach (var movie in Model.Movies)
+            {
+                    <tr>
+                    <td><a asp-controller ="Movie" asp-action="Edit" asp-route-Id="@movie.Id">@movie.Name</a></td>
+                        <td>@movie.Genre.Name</td>
+                    </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+    
+

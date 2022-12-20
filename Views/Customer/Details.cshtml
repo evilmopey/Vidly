@@ -1,0 +1,9 @@
+﻿@model Vidly.ViewModels.CustomerViewModel
+<h1>@Model.Customer.Name</h1>
+<ul>
+    <li>MembershipType: @Model.Customer.MembershipType.Name</li>
+    @if (Model.Customer.DateTime != null)
+    {
+        <li>Birthdate: @Model.Customer.DateTime</li>
+    }
+</ul>
